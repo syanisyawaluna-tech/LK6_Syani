@@ -106,105 +106,11 @@
             </article>
         </section>
 
-        <section id="pendaftaran" style="margin-top: 50px;">
-            <h2 class="section-title">Form Pendaftaran</h2>
-            <article class="form-card"
-                style="box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 12px; padding: 30px; background-color: white;">
-                <form id="registrationForm">
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="nama"
-                            style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 1.1rem; color: #444;">Nama:</label>
-                        <input type="text" id="nama"
-                            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"
-                            placeholder="Masukkan Nama Anda" required>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="email"
-                            style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 1.1rem; color: #444;">Email:</label>
-                        <input type="email" id="email"
-                            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"
-                            placeholder="contoh@gmail.com" required>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="hp"
-                            style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 1.1rem; color: #444;">No
-                            HP:</label>
-                        <input type="tel" id="hp"
-                            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"
-                            placeholder="08..." required>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="kategori"
-                            style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 1.1rem; color: #444;">Kategori:</label>
-                        <select id="kategori"
-                            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"
-                            required>
-                            <option value="">-- Pilih --</option>
-                            <option value="Web Development">Web Development</option>
-                            <option value="UI/UX Design">UI/UX Design</option>
-                            <option value="System Analyst">System Analyst</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="pesan"
-                            style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 1.1rem; color: #444;">Pesan:</label>
-                        <textarea id="pesan" rows="4"
-                            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"
-                            placeholder="Tulis Pesan Anda..." required></textarea>
-                    </div>
-                    <button type="submit" id="btnSubmit"
-                        style="width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: background 0.3s; margin-top: 10px;">Kirim</button>
-                </form>
-            </article>
-
-            <div id="resultContainer" style="display: none; margin-top: 30px;">
-                <article class="result-card"
-                    style="box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 12px; padding: 25px; background-color: #f0f8ff; border-left: 5px solid #28a745;">
-                    <h3 style="color: #28a745; margin-bottom: 20px; font-size: 1.3rem;">Data Berhasil Dikirim ✅</h3>
-                    <p style="margin-bottom: 8px;"><strong>Nama:</strong> <span id="resNama"></span></p>
-                    <p style="margin-bottom: 8px;"><strong>Email:</strong> <span id="resEmail"></span></p>
-                    <p style="margin-bottom: 8px;"><strong>No HP:</strong> <span id="resHP"></span></p>
-                    <p style="margin-bottom: 8px;"><strong>Kategori:</strong> <span id="resKategori"></span></p>
-                    <p style="margin-bottom: 8px;"><strong>Pesan:</strong> <span id="resPesan"></span></p>
-                </article>
-            </div>
-        </section>
-
     </main>
 
     <footer>
         <p>&copy; 2026 Syani Carissa Syawaluna | Built with Passion & Logic</p>
     </footer>
-    <script>
-        // === TAMBAHAN LOGIKA UNTUK FORM PENDAFTARAN ===
-        document.getElementById('registrationForm').addEventListener('submit', function (event) {
-            // 1. Mencegah reload halaman
-            event.preventDefault();
-
-            // 2. Mengambil data dari input
-            const nama = document.getElementById('nama').value;
-            const email = document.getElementById('email').value;
-            const hp = document.getElementById('hp').value;
-            const kategori = document.getElementById('kategori').value;
-            const pesan = document.getElementById('pesan').value;
-
-            // 3. Menampilkan Alert
-            alert('Pesan berhasil dikirim!');
-
-            // 4. Memasukkan data ke bagian tampilan hasil
-            document.getElementById('resNama').innerText = nama;
-            document.getElementById('resEmail').innerText = email;
-            document.getElementById('resHP').innerText = hp;
-            document.getElementById('resKategori').innerText = kategori;
-            document.getElementById('resPesan').innerText = pesan;
-
-            // 5. Memunculkan kontainer tampilan hasil
-            document.getElementById('resultContainer').style.display = 'block';
-
-            // 6. Opsional: Mengosongkan formulir setelah dikirim
-            this.reset();
-        }); 
-    </script>
 </body>
 
 </html>
